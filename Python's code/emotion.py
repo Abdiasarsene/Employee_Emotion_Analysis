@@ -82,14 +82,47 @@ plt.ylabel('Frequences')
 # Choose emotions with a high score
 text['dominant_emotion'] = text['specific_emotion'].apply(lambda x: max(x, key=x.get) if x else "unknown")
 
-# Compter les émotions par jour
-emotion_trend = text.groupby(['Date', 'dominant_emotion']).size().unstack(fill_value=0)
 
-# Tracer l'évolution des émotions
-emotion_trend.plot(figsize=(14, 6), marker='o')
-plt.title("Évolution des émotions au fil du temps")
-plt.xlabel("Date")
+# Convertir 'Date' en datetime
+text['Date'] = pd.to_datetime(text['Date'])
+
+# Extraire le trimestre et l'année sous forme de chaîne
+text['Trimestre'] = text['Date'].dt.to_period('Q').astype(str)
+
+# Compter les émotions par trimestre
+emotion_trend = text.groupby(['Trimestre', 'dominant_emotion']).size().unstack(fill_value=0)
+
+# Tracer le lineplot
+plt.figure(figsize=(14, 6))
+sns.lineplot(data=emotion_trend, marker='o')
+
+plt.title("Évolution des émotions par trimestre")
+plt.xlabel("Trimestre")
 plt.ylabel("Nombre d'occurrences")
+plt.xticks(rotation=45)  # Rotation pour lisibilité
 plt.grid()
 plt.legend(title="Émotions", bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.show()
+
+# Compter les émotions par département
+emotion_by_dept = text.groupby(['Département', 'dominant_emotion']).size().unstack(fill_value=0)
+
+# Heatmap
+plt.figure(figsize=(12, 6))
+sns.heatmap(emotion_by_dept, cmap="coolwarm", annot=True, fmt="d")
+plt.title("Émotions par département")
+plt.xlabel("Émotions")
+plt.ylabel("Département")
+plt.xticks(rotation=45)
+plt.show()
+
+# Compter les émotions par source (Slack, Email, Teams)
+emotion_by_source = text.groupby(['Source', 'dominant_emotion']).size().unstack(fill_value=0)
+
+# Barplot empilé
+emotion_by_source.plot(kind='bar', stacked=True, figsize=(12, 6))
+plt.title("Répartition des émotions par plateforme")
+plt.xlabel("Source")
+plt.ylabel("Nombre d'occurrences")
+plt.xticks(rotation=0)
+plt.legend(title="Émotions", bbox_to_anchor=(1.05, 1), loc='upper left')
