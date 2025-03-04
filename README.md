@@ -32,7 +32,7 @@ This project aims to analyze employee well-being through internal surveys and an
 
 ## 📈 Sample Visualizations  
 📌 *Example of emotion trends over six months:*  
-![Sample Graph](https://via.placeholder.com/600x300)  
+![Sample Graph](./employee_emotion.png)  
 
 ## 📌 Future Work  
 - 🔹 Refining NLP models for better accuracy.  
