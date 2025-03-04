@@ -6,10 +6,9 @@ This project aims to analyze employee well-being through internal surveys and an
 ## 🛠️ Technologies Used  
 - **Python**: Text analysis and NLP  
 - **NLTK / SpaCy**: Text preprocessing  
-- **Transformers (BERT, RoBERTa)**: Emotion classification  
-- **Matplotlib / Seaborn / Plotly**: Data visualization  
+- **VADER Sentiment/NRCLex**: Emotion classification  
+- **Matplotlib / Seaborn**: Data visualization  
 - **Pandas / NumPy**: Data manipulation  
-- **Scikit-learn**: Model evaluation  
 
 ## 📂 Project Structure  
 ```
@@ -18,9 +17,7 @@ This project aims to analyze employee well-being through internal surveys and an
 │── 📂 notebooks          # Jupyter notebooks for exploratory analysis  
 │── 📂 models             # Trained models for emotion classification  
 │── 📂 reports            # Analysis reports and visualizations  
-│── 📂 scripts            # Python scripts for data processing  
 │── README.md             # Project documentation  
-│── requirements.txt      # Project dependencies  
 ```
 
 ## 📊 Methodology  
@@ -32,6 +29,7 @@ This project aims to analyze employee well-being through internal surveys and an
 
 ## 📈 Sample Visualizations  
 📌 *Example of emotion trends over six months:*  
+
 ![Sample Graph](./employee_emotion.png)  
 
 ## 📌 Future Work  
