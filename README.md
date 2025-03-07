@@ -39,7 +39,7 @@ This project aims to analyze employee well-being through internal surveys and an
 
 ## 📕 Download the full report
 
-![Employee_Emotion_Analysis](Employeen Emotion Analysis.pdf)
+![Employee_Emotion_Analysis](Employee_Emotion_Analysis.pdf)
 
 
 
