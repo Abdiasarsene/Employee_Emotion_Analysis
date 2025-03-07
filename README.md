@@ -35,7 +35,13 @@ This project aims to analyze employee well-being through internal surveys and an
 ## 📌 Future Work  
 - 🔹 Refining NLP models for better accuracy.  
 - 🔹 Extending the dataset for more robust analysis.  
-- 🔹 Exploring correlations between emotions and company performance metrics.  
+- 🔹 Exploring correlations between emotions and company performance metrics.
+
+## 📕 Download the full report
+
+![Employee_Emotion_Analysis](Employeen Emotion Analysis.pdf)
+
+
 
 ## 📜 License  
 This project is licensed under the MIT License.
